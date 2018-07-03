@@ -8,11 +8,12 @@ const browserSync = require('browser-sync');
 const csslint = require('gulp-csslint');
 //const gulpif = require('gulp-if');
 //const sprity = require('sprity');
-var inlinesource = require('gulp-inline-source');
+const inlinesource = require('gulp-inline-source');
+const connect = require('gulp-connect');
 
 
 gulp.task('default', ['copy'], function() {
-    gulp.start('build-img', 'merge-css', 'html-replace', 'inlinesource' );
+    gulp.start('build-img', 'merge-css', 'html-replace', 'inlinesource','serveprod');
 })
 
 gulp.task('copy', ['clean'] ,  function() {
@@ -87,4 +88,12 @@ gulp.task('inlinesource', function () {
         .pipe(gulp.dest('dist'));
 });
 
+
+gulp.task('serveprod', function() {
+  connect.server({
+    root: 'dist',
+    port: process.env.PORT || 5000, // localhost:5000
+    livereload: false
+  });
+});
 
