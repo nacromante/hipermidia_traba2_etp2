@@ -13,7 +13,7 @@ const connect = require('gulp-connect');
 
 
 gulp.task('default', ['copy'], function() {
-    gulp.start('build-img', 'merge-css', 'html-replace', 'inlinesource','serveprod');
+    gulp.start('build-img', 'merge-css', 'html-replace', 'inlinesource', 'serveprod');
 })
 
 gulp.task('copy', ['clean'] ,  function() {
@@ -96,4 +96,6 @@ gulp.task('serveprod', function() {
     livereload: false
   });
 });
+
+
 
