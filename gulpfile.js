@@ -9,6 +9,7 @@ const csslint = require('gulp-csslint');
 //const gulpif = require('gulp-if');
 //const sprity = require('sprity');
 const inlinesource = require('gulp-inline-source');
+//const Hapi = require('hapi');
 const connect = require('gulp-connect');
 
 
@@ -90,12 +91,15 @@ gulp.task('inlinesource', function () {
 
 
 gulp.task('serveprod', function() {
+  console.log('porta '+process.env.PORT);
   connect.server({
     root: 'dist',
-    port: process.env.PORT || 5000, // localhost:5000
+    port: process.env.PORT || 3000, // localhost:5000
     livereload: false
   });
 });
+
+//const server = Hapi.Server({ port: 3000, host: 'localhost' });
 
 
 

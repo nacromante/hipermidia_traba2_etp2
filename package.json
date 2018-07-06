@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "hapi": "^17.5.2",
     "jquery": "^3.3.1",
     "normalize.css": "^8.0.0"
   },
