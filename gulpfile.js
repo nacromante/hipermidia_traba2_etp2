@@ -94,7 +94,7 @@ gulp.task('serveprod', function() {
   console.log('porta '+process.env.PORT);
   connect.server({
     root: 'dist',
-    port: process.env.PORT || 3000, // localhost:5000
+    port: process.env.PORT || 15506, // localhost:5000
     livereload: false
   });
 });
