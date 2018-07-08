@@ -112,5 +112,5 @@ gulp.task('server', function () {
   var app = express()
   .use(express.static(__dirname + '/dist/'))
   .listen(process.env.PORT || 5000);
-  console.log('passou server')
+  console.log('passou server...')
 });
