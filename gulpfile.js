@@ -4,17 +4,18 @@ const clean = require('gulp-clean');
 const concat = require('gulp-concat');
 const htmlReplace = require('gulp-html-replace');
 const cleanCSS = require('gulp-clean-css');
-const browserSync = require('browser-sync');
+//const browserSync = require('browser-sync');
 const csslint = require('gulp-csslint');
 //const gulpif = require('gulp-if');
 //const sprity = require('sprity');
 const inlinesource = require('gulp-inline-source');
 //const Hapi = require('hapi');
-const connect = require('gulp-connect');
+//const connect = require('gulp-connect');
+const express = require('express');
 
 
 gulp.task('default', ['copy'], function() {
-    gulp.start('build-img', 'merge-css', 'html-replace', 'inlinesource', 'serveprod');
+    gulp.start('build-img', 'merge-css', 'html-replace', 'inlinesource', 'server');
 })
 
 gulp.task('copy', ['clean'] ,  function() {
@@ -90,16 +91,25 @@ gulp.task('inlinesource', function () {
 });
 
 
-gulp.task('serveprod', function() {
-  console.log('porta '+process.env.PORT);
-  connect.server({
-    root: 'dist',
-    port: process.env.PORT || 15506, // localhost:5000
-    livereload: false
-  });
-});
+//var port = process.env.PORT || 4040;
+//var httpServer = require('http').createServer(app);
+//httpServer.listen(port, function() {
+//  console.log('sistema running on port ' + port + '.');
+//});
+
+//gulp.task('serveprod', function() {
+//  console.log('porta '+process.env.PORT);
+//  connect.server({
+//    root: 'dist',
+//    port: process.env.PORT || 15506, // localhost:5000
+//    livereload: false
+//  });
+//});
 
 //const server = Hapi.Server({ port: 3000, host: 'localhost' });
 
-
-
+gulp.task('server', function () {
+  var app = express()
+  .use(express.static(__dirname + '/dist/'))
+  .listen(process.env.PORT || 5000);
+});
