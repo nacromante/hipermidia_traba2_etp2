@@ -1,0 +1,78 @@
+/*
+Icon classes can be used entirely standalone. They are named after their original file names.
+
+Example usage in HTML:
+
+`display: block` sprite:
+<div class="icon-home"></div>
+
+To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+
+// CSS
+.icon {
+  display: inline-block;
+}
+
+// HTML
+<i class="icon icon-home"></i>
+*/
+.icon-bg {
+  background-image: url(../sprite/sprite.jpg);
+  background-position: 0px 0px;
+  width: 1440px;
+  height: 962px;
+}
+.icon-pic01 {
+  background-image: url(../sprite/sprite.jpg);
+  background-position: 0px -2004px;
+  width: 600px;
+  height: 300px;
+}
+.icon-pic02 {
+  background-image: url(../sprite/sprite.jpg);
+  background-position: -640px -2004px;
+  width: 600px;
+  height: 300px;
+}
+.icon-pic03 {
+  background-image: url(../sprite/sprite.jpg);
+  background-position: -1280px -2004px;
+  width: 600px;
+  height: 300px;
+}
+.icon-pic04 {
+  background-image: url(../sprite/sprite.jpg);
+  background-position: -1920px -2004px;
+  width: 600px;
+  height: 300px;
+}
+.icon-slide01 {
+  background-image: url(../sprite/sprite.jpg);
+  background-position: -1480px -1002px;
+  width: 1440px;
+  height: 961px;
+}
+.icon-slide02 {
+  background-image: url(../sprite/sprite.jpg);
+  background-position: -2960px 0px;
+  width: 1440px;
+  height: 961px;
+}
+.icon-slide03 {
+  background-image: url(../sprite/sprite.jpg);
+  background-position: -1480px 0px;
+  width: 1440px;
+  height: 962px;
+}
+.icon-slide04 {
+  background-image: url(../sprite/sprite.jpg);
+  background-position: -2960px -1001px;
+  width: 1440px;
+  height: 961px;
+}
+.icon-slide05 {
+  background-image: url(../sprite/sprite.jpg);
+  background-position: 0px -1002px;
+  width: 1440px;
+  height: 962px;
+}
